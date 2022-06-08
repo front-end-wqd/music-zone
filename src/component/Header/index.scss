@@ -1,0 +1,88 @@
+@import url("https://fonts.font.im/css?family=Monoton");
+
+header {
+  background: $color-1;
+  font-size: 1.25em;
+  display: flex;
+  align-items: center;
+  .app-name {
+    font-family: "Monoton";
+    font-size: 2em;
+    padding: 0 0.75em;
+    color: $color-2;
+    cursor: pointer;
+  }
+  .menu {
+    font-size: 2em;
+    margin: 0 0.75em 0 auto;
+    cursor: pointer;
+  }
+  ul {
+    margin-bottom: 0;
+    display: none;
+    a:link {
+      color: white;
+      li {
+        display: none;
+        padding: 1em;
+        color: #fff;
+        cursor: pointer;
+        span {
+          margin-right: 0.25em;
+          font-size: 1.25em;
+        }
+      }
+      li.active {
+        color: $color-2;
+      }
+    }
+    a:hover {
+      li {
+        color: $color-2;
+      }
+    }
+  }
+}
+.ant-popover {
+  .ant-popover-inner-content {
+    padding: 0.5em;
+    .popover {
+      margin-bottom: 0;
+      a:link {
+        color: $text-color-1;
+        li {
+          padding: 0.25em 1.25em;
+          cursor: pointer;
+          border-radius: 0.25em;
+          span {
+            margin-right: 0.5em;
+            font-size: 1.25em;
+          }
+        }
+        li:hover {
+          background-color: #ae92dd;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  header {
+    .menu {
+      display: none;
+    }
+    ul {
+      display: block;
+      // margin-left: auto;
+      a:link {
+        li {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .ant-popover {
+    display: none;
+  }
+}

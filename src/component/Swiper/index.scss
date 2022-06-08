@@ -1,0 +1,32 @@
+.swiper {
+  max-width: 800px;
+  .swiper-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    .filter {
+      width: 100%;
+      filter: blur(15px) opacity(0.5);
+    }
+    div {
+      border-radius: inherit;
+      overflow: inherit;
+      position: absolute;
+      img {
+        width: calc(75vw);
+        max-width: calc(800px * 0.75);
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .swiper {
+    margin: 1em auto;
+    .swiper-slide {
+      border-radius: 1em;
+    }
+  }
+}
