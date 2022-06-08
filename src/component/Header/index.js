@@ -18,11 +18,15 @@ function Header() {
   const { currentMenu } = useSelector((state) => state.appReducer);
 
   // 统一设置双色图标主色
-  setTwoToneColor("#58319B");
+  setTwoToneColor("#6D21AB");
 
   const changeMenu = (name) => {
     if (name === currentMenu) return;
     dispatch({ type: CHANGE_MENU, payload: name });
+  };
+
+  const isActive = (name) => {
+    return currentMenu === name;
   };
 
   const menu = (
@@ -30,50 +34,57 @@ function Header() {
       <Link to="/">
         <li
           onClick={() => changeMenu("home")}
-          className={currentMenu === "home" ? "active" : ""}
+          className={isActive("home") ? "active" : ""}
         >
-          <CustomerServiceTwoTone />
+          <CustomerServiceTwoTone
+            twoToneColor={isActive("home") ? "#02c39a" : ""}
+          />
           首页
         </li>
       </Link>
       <Link to="/singer">
         <li
           onClick={() => changeMenu("singer")}
-          className={currentMenu === "singer" ? "active" : ""}
+          className={isActive("singer") ? "active" : ""}
         >
-          <AudioTwoTone />
+          <AudioTwoTone twoToneColor={isActive("singer") ? "#00a6fb" : ""} />
           歌手
         </li>
       </Link>
       <Link to="/song">
         <li
           onClick={() => changeMenu("song")}
-          className={currentMenu === "song" ? "active" : ""}
+          className={isActive("song") ? "active" : ""}
         >
-          <FireTwoTone />
+          <FireTwoTone twoToneColor={isActive("song") ? "#e71d36" : ""} />
           歌单
         </li>
       </Link>
       <Link to="/rank">
         <li
           onClick={() => changeMenu("rank")}
-          className={currentMenu === "rank" ? "active" : ""}
+          className={isActive("rank") ? "active" : ""}
         >
-          <TrophyTwoTone />
+          <TrophyTwoTone twoToneColor={isActive("rank") ? "#ff9f1c" : ""} />
           排行榜
         </li>
       </Link>
     </>
   );
 
-  const content = <ul className="popover">{menu}</ul>;
+  const content = <ul>{menu}</ul>;
 
   return (
     <>
       <header>
         <div className="app-name">music zone</div>
         <div className="menu">
-          <Popover placement="leftTop" content={content} trigger="hover">
+          <Popover
+            overlayClassName="popover"
+            placement="bottom"
+            content={content}
+            trigger="hover"
+          >
             <AppstoreTwoTone />
           </Popover>
         </div>

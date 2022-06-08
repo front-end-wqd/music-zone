@@ -29,39 +29,29 @@ header {
         cursor: pointer;
         span {
           margin-right: 0.25em;
-          font-size: 1.25em;
+          font-size: 1.5em;
         }
-      }
-      li.active {
-        color: $color-2;
-      }
-    }
-    a:hover {
-      li {
-        color: $color-2;
       }
     }
   }
 }
-.ant-popover {
-  .ant-popover-inner-content {
-    padding: 0.5em;
-    .popover {
-      margin-bottom: 0;
-      a:link {
-        color: $text-color-1;
-        li {
-          padding: 0.25em 1.25em;
-          cursor: pointer;
-          border-radius: 0.25em;
-          span {
-            margin-right: 0.5em;
-            font-size: 1.25em;
-          }
+.popover {
+  ul {
+    margin-bottom: 0;
+    a:link {
+      color: $text-color-1;
+      li {
+        padding: 0.5em 0;
+        width: 10em;
+        cursor: pointer;
+        border-radius: 0.25em;
+        span {
+          margin: 0 1em;
+          font-size: 1.5em;
         }
-        li:hover {
-          background-color: #ae92dd;
-        }
+      }
+      li:hover {
+        background-color: #ae92dd;
       }
     }
   }
@@ -82,7 +72,7 @@ header {
       }
     }
   }
-  .ant-popover {
+  .popover {
     display: none;
   }
 }
